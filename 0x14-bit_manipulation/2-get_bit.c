@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * get_bit - A function that gets a bit at index
  * @n: The number to get bit from
@@ -13,7 +12,6 @@ int get_bit(unsigned long int n, unsigned int index)
 	max <<= index;
 	if (max == 0)
 		return (-1);
-
 	if ((n & max))
 		return (1);
 	else
