@@ -1,4 +1,6 @@
 #include "main.h"
+#include <limits.h>
+#include <stdbool.h>
 /**
  * get_bit - A function that gets a bit at index
  * @n: The number to get bit from
@@ -7,14 +9,12 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int max = 0x01;
+	unsigned long int mask;
 
-	max <<= index;
-	if (max == 0)
+	if (index >= sizeof(unsigned long int) * CHAR_BIT)
+	{
 		return (-1);
-	if ((n & max))
-		return (1);
-	else
-		return (0);
+	}
+	mask = 1UL << index;
+	return ((n & mask) ? 1 : 0);
 }
-
