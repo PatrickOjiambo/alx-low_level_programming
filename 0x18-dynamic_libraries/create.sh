@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Get a list of all .c files in the current directory
-c_files=$(find . -maxdepth 1 -type f -name "*.c")
+# Get a list of all .c files in the current directory, excluding 100-operations.c
+c_files=$(find . -maxdepth 1 -type f -name "*.c" ! -name "100-operations.c")
 
 # Compile each .c file into an object file
 object_files=""
